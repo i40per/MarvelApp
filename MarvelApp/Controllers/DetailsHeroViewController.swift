@@ -76,7 +76,6 @@ class DetailsHeroViewController: UIViewController {
         view.backgroundColor = #colorLiteral(red: 0.1646832824, green: 0.1647188365, blue: 0.1646810472, alpha: 1)
         
         navigationController?.navigationBar.tintColor = .white
-        navigationController?.navigationBar.topItem?.title = ""
         
         if #available(iOS 13.0, *) {
             navigationController?.navigationBar.standardAppearance.titleTextAttributes = [.foregroundColor: UIColor.white]

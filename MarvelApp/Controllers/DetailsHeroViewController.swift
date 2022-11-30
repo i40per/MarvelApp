@@ -159,7 +159,8 @@ extension DetailsHeroViewController: UICollectionViewDataSource {
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: idRandomHeroCollectionView, for: indexPath) as! RandomHeroCollectionViewCell
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: idRandomHeroCollectionView, for: indexPath) as?
+                RandomHeroCollectionViewCell else {return UICollectionViewCell()}
         
         let heroModel = randomHeroesArray[indexPath.row]
         cell.cellConfigure(model: heroModel)

@@ -127,7 +127,8 @@ extension MainViewController: UICollectionViewDataSource {
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: idCollectionView, for: indexPath) as! HeroesCollectionViewCell
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: idCollectionView, for: indexPath) as?
+                HeroesCollectionViewCell else {return UICollectionViewCell()}
         let heroModel = heroesArray[indexPath.row]
         cell.cellConfigure(model: heroModel)
         return cell
